@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.liens{
+	font-size:16px;
+	font-family:Oswald;
+	text-transform:uppercase;
+  text-decoration: none;
+}
+
+.sous-liens{
+	font-size:12px;
+	font-family:Oswald;
+	text-transform:uppercase;
+}
+
+.header-footer-background-color{
+	background-color:#ffbd29;
+}
+
+.footer{
+   position: absolute;
+   bottom:0;
+   width:100%;
+   background-color: #ffbd29;
+   text-align:center;
+   color:white;
+   border-radius:rounded;
+}
+
+.body{
+	position:absolute;
+	bottom:10px;
+	border-radius:rounded;
+}
