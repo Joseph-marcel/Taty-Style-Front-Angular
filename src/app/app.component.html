@@ -10,16 +10,16 @@
             <div style="width:64%;"> 
                 <ul class="navbar-nav liens" style="float:right">
                     <li class="nav-item">
-                       <a routerLink="/home" routerLinkActive="active" class="nav-link">accueil</a>
+                       <a routerLink="home" routerLinkActive="active" class="nav-link">accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/product" routerLinkActive="active" class="nav-link">produit</a>
+                        <a routerLink="products" routerLinkActive="active" class="nav-link">produit</a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/stock" routerLinkActive="active" class="nav-link">stock</a>
+                        <a routerLink="stock" routerLinkActive="active" class="nav-link">stock</a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/invoice" routerLinkActive="active" class="nav-link">facture</a>
+                        <a routerLink="invoice" routerLinkActive="active" class="nav-link">facture</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"  role="button">
@@ -39,11 +39,11 @@
         </div>
     </nav>
 </header>
-<div class="container">
+<div class="container rounded">
     <router-outlet></router-outlet> 
 </div>
-<footer class="footer">
-    <div class="align-middle">
+<footer class="header-footer-background-color">
+    <div class="container-fluid navbar-fixed-bottom text-center">
          <small class="text-white liens">Copyright-2024</small>
     </div>
 </footer>

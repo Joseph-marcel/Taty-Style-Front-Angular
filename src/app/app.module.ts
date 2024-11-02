@@ -2,19 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { AppComponent } from './app.component'
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { StockComponent } from './stock/stock.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { FormsModule } from '@angular/forms';
+import { ProductComponent } from './product/product.component';
+import { provideHttpClient } from '@angular/common/http';
+import { ProductService } from './product.service';
+import { ConsultProductComponent } from './consult-product/consult-product.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+
+
 
 const appRoutes : Routes = [
   {path :'home', component: HomeComponent},
-  {path :'product', component: ProductListComponent},
+  {path:'products', component:ProductComponent},
   {path :'stock', component: StockComponent},
   {path :'invoice', component: InvoiceComponent},
+  {path :'update-product/:pdtId', component: UpdateProductComponent},
+  {path :'consult-product/:pdtId', component: ConsultProductComponent},
   {path :'', redirectTo:'/accueil', pathMatch:'full'}
 ];
 
@@ -22,9 +30,11 @@ const appRoutes : Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductListComponent,
+    ProductComponent,
     StockComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    ConsultProductComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +42,12 @@ const appRoutes : Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers:[
+    provideHttpClient(),
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

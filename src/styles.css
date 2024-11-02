@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+page{
+	padding-top:10px;
+	background-color:#01080f;
+}
+
 .liens{
 	font-size:16px;
 	font-family:Oswald;
@@ -26,8 +32,35 @@
    border-radius:rounded;
 }
 
-.body{
-	position:absolute;
+body{
 	bottom:10px;
 	border-radius:rounded;
+}
+
+.container{
+	margin-top:10px;
+	background-color: #dcdfe2;
+}	
+
+.btn-primary{
+	height:40px;
+}
+
+.border{
+	border:5px solid #fff;
+}
+
+legend{
+	width:0px;
+}
+
+.custom-cell1{
+	display: inline-block;
+    width: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.special1{
+	background-color:#dcdfe2;
 }
