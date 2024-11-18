@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component'
 import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +12,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { ProductService } from './product.service';
 import { ConsultProductComponent } from './consult-product/consult-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 
@@ -22,6 +22,7 @@ const appRoutes : Routes = [
   {path :'stock', component: StockComponent},
   {path :'invoice', component: InvoiceComponent},
   {path :'update-product/:pdtId', component: UpdateProductComponent},
+  {path :'add-product', component: AddProductComponent},
   {path :'consult-product/:pdtId', component: ConsultProductComponent},
   {path :'', redirectTo:'/accueil', pathMatch:'full'}
 ];
@@ -34,7 +35,8 @@ const appRoutes : Routes = [
     StockComponent,
     InvoiceComponent,
     ConsultProductComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

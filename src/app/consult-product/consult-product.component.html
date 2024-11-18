@@ -1,1 +1,93 @@
-<p>consult-product works!</p>
+<div class="d-flex">
+    <div class="col-md-12">
+        <div class="card bg-light mb-3 mt-1">
+            <div class="card-heading bg-primary text-center text-white liens">fiche produit</div>
+                <div class="card-body">
+                    <table class="table table-bordered text-center sous-liens table-striped">
+                        <thead style="background-color:#ebebeb;">
+                            <tr class="header-footer-background-color text-white">
+                               <th>Designation</th>
+                               <th>Prix Achat</th>
+                               <th>Prix De Vente</th>
+                               <th>Benefice</th>
+                               <th>Status</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <tr *ngIf="product$">
+                                <td>{{product$.designation}}</td>
+                                <td>{{product$.inStockPrice | number:'1.2-2'}}</td>
+                                <td>{{product$.outStockPrice | number:'1.2-2'}}</td>
+                                <td>{{product$.totalBenefit | number:'1.2-2'}}</td>
+                                <td>{{product$.status}}</td>
+                            </tr>
+                         </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex mb-3">
+    <div class="col-md-6">
+        <div class="card bg-light mb-1 mt-3">
+            <div class="card-heading bg-primary text-center text-white liens">historique des operations</div>
+            <div class="card-body">
+                <table class="table table-bordered text-center sous-liens table-striped">
+                    <thead style="background-color:#ebebeb;">
+                        <tr class="header-footer-background-color text-white">
+                           <th>Type</th>
+                           <th>Quantite</th>
+                           <th>Montant</th>
+                           <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let operation of product$?.stockOperationDtos">
+                        <tr>
+                            <td>{{operation.type}}</td>
+                            <td>{{operation.quantity}}</td>
+                            <td>{{operation.amount | number:'1.2-2'}}</td>
+                            <td>{{operation.dateOperation | date:"dd-MM-yyyy"}}</td>                        
+                        </tr>
+                    </ng-container>
+                    </tbody>
+                </table>
+                <ul class="nav nav-pills">
+                    <li *ngFor="let item of [].constructor(product$.totalPages); let page=index;">
+                        <a  [ngClass]="page==currentPage?'btn-info':'btn btn-outline-info'" (click)="gotoPage(page)" class="btn ms-2 mt-1 mr-1">{{page}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card bg-light mb-1 mt-3">
+            <div class="card-heading bg-primary text-center text-white liens">historique des marges</div>
+            <div class="card-body">
+                <table class="table table-bordered text-center sous-liens table-striped">
+                    <thead style="background-color:#ebebeb;">
+                        <tr class="header-footer-background-color text-white">
+                           <th>Quantite</th>
+                           <th>Montant</th>
+                           <th>Date</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <ng-container *ngFor="let margin of product$?.marginsDto">
+                        <tr>
+                            <td>{{margin.quantity}}</td>
+                            <td>{{margin.amount | number:'1.2-2'}}</td>
+                            <td>{{margin.saleDate | date:"dd-MM-yyyy"}}</td>
+                        </tr>
+                        </ng-container>
+                     </tbody>
+                </table>
+                <ul class="nav nav-pills">
+                    <li *ngFor="let item of pages; let page=index;">
+                        <a [ngClass]="page==currentPage?'btn-info':'btn btn-outline-info'"  (click)="gotoPage(page)" class="btn ms-2 mt-1 mr-1">{{page}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

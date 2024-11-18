@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from './product';
+import { ProductI } from './productI';
+import { ProductPage } from './productPage';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +14,23 @@ export class ProductService {
 
   constructor(private httpClient:HttpClient){}
 
-  getProductList(): Observable<Product[]>{
-    return this.httpClient.get<Product[]>(`${this.baseURL}`);
+  getProductList(page1:number,size:number): Observable<ProductPage>{
+    return this.httpClient.get<ProductPage>(`${this.baseURL}?page=${page1}&size=${size}`);
   }
 
-  consult(pdtId:number): Observable<Product>{
+  consult(pdtId:number,page:number,size:number): Observable<ProductI>{
+    return this.httpClient.get<ProductI>(`${this.baseURL}/benefit/${pdtId}?page=${page}&size=${size}`);
+  }
+
+  saveProduct(product:Product):Observable<any>{
+    return this.httpClient.post(`${this.baseURL}`,product);
+  }
+
+  getProduct(pdtId:number): Observable<Product>{
     return this.httpClient.get<Product>(`${this.baseURL}/${pdtId}`);
+  }
+
+  updateProduct(pdtId:number,product:Product): Observable<any>{
+    return this.httpClient.put(`${this.baseURL}/${pdtId}`,product);
   }
 }

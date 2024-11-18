@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
-import { ProductStatus } from '../product-status';
 import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
+import { ProductPage } from '../productPage';
+
 
 @Component({
   selector: 'app-product',
@@ -10,35 +11,49 @@ import { ProductService } from '../product.service';
 })
 export class ProductComponent implements OnInit{
 
-  title = "liste des produits";
-  products:Product[];
-  product: Product;
-
-
+  title = "Ajouter";
+  productPage$:ProductPage;
+  currentPage:number = 0;
+  size:number = 3;
   
 
-  constructor(private productService: ProductService){}
+  constructor(private productService: ProductService,
+              private router: Router){}
 
     ngOnInit(): void {
-      this.getProducts();
-      this.consultProduct(this.product.pdtId);
+      this.getProducts(this.currentPage,this.size);
+     
     }
 
-    private getProducts(){
-        this.productService.getProductList().subscribe((data) => {
-          this.products = data;
-          console.log(data);
-        });
+    private getProducts(page1:number,size:number){
+        this.productService.getProductList(this.currentPage,this.size).subscribe((data) => {
+        this.productPage$ = data;
+      });
     }
 
+    updateProduct(pdtId: number) {
+      this.router.navigate(['update-product', pdtId]);
+    }
 
     consultProduct(pdtId: number) {
-      this.productService.consult(pdtId).subscribe((data) =>{
-        this.product = data;
-        console.log(data);
-      });
-   
+      this.router.navigate(['consult-product', pdtId]);
     }
+
+    addProduct() {
+      this.router.navigate(['add-product']);
+    }
+
+    gotoPage(page: number) {
+      this.currentPage=page;
+      this.getProducts(this.currentPage,this.size);
+    }
+
+    getPage(page: number) {
+      this.currentPage=page;
+      this.getProducts(this.currentPage,this.size);
+    }
+
+    
   }
     
 

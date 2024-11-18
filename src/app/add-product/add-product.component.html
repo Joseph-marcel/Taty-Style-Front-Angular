@@ -1,0 +1,31 @@
+<div>
+    <fieldset class="form-group customborder p-3 mt-3 mb-1">
+        <legend>Ajouter</legend>
+           <div class="col-md-10 offset-1">
+            <form (ngSubmit) = "onSubmit()">
+                <div class="d-flex flex-row justify-content-center mb-3">
+                    <div class="form-input-margin-right mr-2">
+                        <input type="text" class="form-control" id="designation" name="designation" [(ngModel)] = "product.designation"  required/>	                       					                                        
+                            <small id="designationHelp" class="form-text text-muted text-center">designation du produit</small>
+                            <small><span class="text-danger"></span></small> 							                                                                                                          
+                    </div>
+                    <div class="form-input-margin-right mr-2">
+                        <input type="number" class="form-control" id="inStockPrice" name="inStockPrice"  [(ngModel)] = "product.inStockPrice"  required/>
+                          <small id="inStockPriceHelp" class="form-text text-muted text-center">prix d'achat</small>
+                          <small><span class="text-danger"></span></small>				                                                                                                    	                                                                     	                                                                
+                    </div>
+                    <div class="form-input-margin-right mr-3">
+                        <input type="date" class="form-control" id="recordDate" name="recordDate" [(ngModel)] = "product.recordDate"  required/>							                                      
+                            <small id="recordDateHelp" class="form-text text-muted text-center">date de creation</small>							                                          
+                            <small><span class="text-danger" ></span></small>                                                                                                                                 
+                    </div>
+                    <button type="submit" class="btn btn-success rounded">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                      </svg>
+                    </button>
+              </div>
+            </form>
+         </div>
+    </fieldset>
+</div>
