@@ -42,21 +42,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let operation of stockOperations | paginate:{itemsPerPage:size,currentPage:page};index as i">
-                            <td>{{operation[i].type}}</td>
-                            <td>{{operation[i].quantity}}</td>
-                            <td>{{operation[i].amount | number:'1.2-2'}}</td>
-                            <td>{{operation[i].dateOperation | date:"dd-MM-yyyy"}}</td>                        
+                        <tr *ngFor="let operation of product$?.stockOperationDtos">
+                            <td>{{operation.type}}</td>
+                            <td>{{operation.quantity}}</td>
+                            <td>{{operation.amount | number:'1.2-2'}}</td>
+                            <td>{{operation.dateOperation | date:"dd-MM-yyyy"}}</td>                        
                         </tr>
                     </tbody>
                 </table>
-                <!-- <ul class="nav nav-pills">
-                    <li *ngFor="let item of pages; let page=index;">
-                        <a  [ngClass]="page==currentPage?'btn-info':'btn btn-outline-info'" (click)="gotoPage(page)" class="btn ms-2 mt-1 mr-1">{{page}}</a>
+                <ul class="nav nav-pills">
+                    <li *ngFor="let item of [].constructor(product$?.totalPages); let page=index;">
+                        <a  [ngClass]="page==currentPage?'btn btn-info':'btn btn-outline-info'" (click)="getPage(page)" class="ms-2 mt-1 mr-1">{{page}}</a>
                     </li>
-                </ul> -->
-                <pagination-controls (pageChange)="page = $event"></pagination-controls>
-                
+                </ul>
             </div>
         </div>
     </div>
@@ -73,17 +71,17 @@
                         </tr>
                      </thead>
                      <tbody>
-                        <ng-container>
-                        <tr>
-                            
+                        <tr *ngFor="let margin of product$?.marginsDto">
+                            <td>{{margin.quantity}}</td>
+                            <td>{{margin.amount | number:'1.2-2'}}</td>
+                            <td>{{margin.saleDate| date:"dd-MM-yyyy"}}</td>                        
                         </tr>
-                        </ng-container>
                      </tbody>
                 </table>
                 <ul class="nav nav-pills">
-                    <!-- <li *ngFor="let item of pages; let page=index;">
-                        <a [ngClass]="page==currentPage?'btn-info':'btn btn-outline-info'"  (click)="gotoPage(page)" class="btn ms-2 mt-1 mr-1">{{page}}</a>
-                    </li> -->
+                    <li *ngFor="let item of [].constructor(product$?.totalPages); let page=index;">
+                        <a  [ngClass]="page==currentPage?'btn btn-info':'btn btn-outline-info'" (click)="getPage(page)" class="ms-2 mt-1 mr-1">{{page}}</a>
+                    </li>
                 </ul>
             </div>
         </div>

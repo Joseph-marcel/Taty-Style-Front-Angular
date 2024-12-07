@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { ActivatedRoute } from '@angular/router';
-import { ProductI, StockOperationDto } from '../productI';
+import { ProductI } from '../productI';
 
 
 @Component({
@@ -12,11 +12,10 @@ import { ProductI, StockOperationDto } from '../productI';
 export class ConsultProductComponent implements OnInit{
    
   pdtId:number;
-  totalLength:any;
-  page:number = 1;
+  currentPage:number = 0;
   product$:ProductI;
   size:number=2;
-  stockOperations:any[];
+
 
 
   constructor(private productService:ProductService, private route:ActivatedRoute){}
@@ -26,13 +25,14 @@ export class ConsultProductComponent implements OnInit{
   }
   productHistory(){
      this.pdtId = this.route.snapshot.params['pdtId'];
-     this.productService.consult(this.pdtId,this.page,this.size).subscribe(data => {
+     this.productService.consult(this.pdtId,this.currentPage,this.size).subscribe(data => { 
      this.product$ = data;
-     this.stockOperations =[this.product$?.stockOperationDtos];
-     this.totalLength = this.stockOperations.length;
     });
   }
 
-  
+  getPage(page: number) {
+    this.currentPage=page;
+    this.productHistory();
+  }
   
 }

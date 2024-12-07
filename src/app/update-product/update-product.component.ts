@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product';
-import { IProduct } from '../Iproduct';
+
+
 
 @Component({
   selector: 'app-update-product',
@@ -14,6 +15,7 @@ export class UpdateProductComponent implements OnInit{
   title: "mise à jour";
   pdtId:number;
   product:Product = new Product();
+
 
   constructor(private productService:ProductService, private router:Router,private route:ActivatedRoute){}
 
