@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { Route, Router } from '@angular/router';
+import { Product } from '../product';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+
+
+
+
 
 @Component({
   selector: 'app-add-product',
@@ -11,22 +17,18 @@ import { Route, Router } from '@angular/router';
 export class AddProductComponent implements OnInit{
 
   product:Product = new Product();
-  
 
-  constructor(private productService:ProductService,private router:Router){}
+
+constructor(private productService:ProductService,private router:Router){}
    
-  ngOnInit(): void {
+ngOnInit(): void {
     
-  }
+}
 
-  onSubmit() {
-    this.saveProduct();
-    this.router.navigate(['products']);
-  }
+onSubmit() {
+  this.productService.saveProduct(this.product).subscribe( data => { this.product = data});
+  this.router.navigate(['products']);
+}
 
-  saveProduct(){
-    this.productService.saveProduct(this.product).subscribe( data =>{
-      this.product = data;
-    });
-  }
+  
 }

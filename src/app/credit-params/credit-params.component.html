@@ -1,22 +1,22 @@
 <div>
     <fieldset class="form-group customborder p-3 mt-3 mb-1">
-        <legend>Ajouter</legend>
+        <legend>crediter</legend>
            <div class="col-md-10 offset-1">
-            <form (ngSubmit) = "onSubmit()" method="post">
+            <form (ngSubmit) = "onSubmit(reference,pdtId)">
                 <div class="d-flex flex-row justify-content-center mb-3">
                     <div class="form-input-margin-right mr-2">
-                        <input type="text" id="designation" class="form-control" [(ngModel)]="product.designation" name="designation"/>	                       					                                        
-                            <small id="designationHelp" class="form-text text-muted text-center">designation du produit</small>
+                        <input type="text" class="form-control" id="type" name="type" [(ngModel)] = "stockOperation.type"  required/>	                       					                                        
+                            <small id="typeHelp" class="form-text text-muted text-center">type d'operation</small>
                             <small><span class="text-danger"></span></small> 							                                                                                                          
                     </div>
                     <div class="form-input-margin-right mr-2">
-                        <input type="number" class="form-control" id="inStockPrice" [(ngModel)]="product.inStockPrice"  name="inStockPrice"/>
-                          <small id="inStockPriceHelp" class="form-text text-muted text-center">prix d'achat</small>
+                        <input type="number" class="form-control" id="quantity" name="quantity"  [(ngModel)] = "stockOperation.quantity"  required/>
+                          <small id="quantityHelp" class="form-text text-muted text-center">quantité</small>
                           <small><span class="text-danger"></span></small>				                                                                                                    	                                                                     	                                                                
                     </div>
                     <div class="form-input-margin-right mr-3">
-                        <input type="date" class="form-control" id="recordDate" [(ngModel)]="product.recordDate"  name="recordDate"/>							                                      
-                            <small id="recordDateHelp" class="form-text text-muted text-center">date de creation</small>							                                          
+                        <input type="date" class="form-control" id="dateOperation" name="dateOperation" [(ngModel)] = "stockOperation.dateOperation"  required/>							                                      
+                            <small id="dateOperationHelp" class="form-text text-muted text-center">date de creation</small>							                                          
                             <small><span class="text-danger" ></span></small>                                                                                                                                 
                     </div>
                     <button type="submit" class="btn btn-success rounded">
@@ -29,3 +29,4 @@
          </div>
     </fieldset>
 </div>
+

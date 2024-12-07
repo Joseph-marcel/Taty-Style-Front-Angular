@@ -13,6 +13,12 @@ import { ProductService } from './product.service';
 import { ConsultProductComponent } from './consult-product/consult-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { CreditStockComponent } from './credit-stock/credit-stock.component';
+import { DebitStockComponent } from './debit-stock/debit-stock.component';
+import { GetStockHistoryComponent } from './get-stock-history/get-stock-history.component';
+import { CreditParamsComponent } from './credit-params/credit-params.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -24,7 +30,11 @@ const appRoutes : Routes = [
   {path :'update-product/:pdtId', component: UpdateProductComponent},
   {path :'add-product', component: AddProductComponent},
   {path :'consult-product/:pdtId', component: ConsultProductComponent},
-  {path :'', redirectTo:'/accueil', pathMatch:'full'}
+  {path :'credit-stock/:reference', component: CreditStockComponent},
+  {path :'debit-stock/:reference', component: DebitStockComponent},
+  {path :'get-stock-history/:reference', component: GetStockHistoryComponent},
+  {path :'credit-params/:reference/:pdtId', component: CreditParamsComponent},
+  {path :'products', redirectTo:'/products', pathMatch:'full'}
 ];
 
 @NgModule({
@@ -36,17 +46,23 @@ const appRoutes : Routes = [
     InvoiceComponent,
     ConsultProductComponent,
     UpdateProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    CreditStockComponent,
+    DebitStockComponent,
+    GetStockHistoryComponent,
+    CreditParamsComponent
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers:[
     provideHttpClient(),
-    ProductService
+    ProductService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
 import { OperationType } from "./operation-type";
 
-export class StockOperation {
+export interface StockOperation {
     operationNumber: number;
     dateOperation: Date;
     amount: number;

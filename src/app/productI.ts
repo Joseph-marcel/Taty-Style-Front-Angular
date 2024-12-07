@@ -5,21 +5,21 @@ export interface ProductI {
     outStockPrice:      number;
     status:             string;
     totalBenefit:       number;
+    size:               number;
     currentPage:        number;
     totalPages:         number;
-    size:               number;
-    stockOperationDtos: StockOperation[];
-    marginsDto:         Margins[];
+    stockOperationDtos: StockOperationDto[];
+    marginsDto:         MarginsDto[];
 }
 
-export interface Margins {
+export interface MarginsDto {
     marginId: number;
     amount:   number;
     saleDate: Date;
     quantity: number;
 }
 
-export interface StockOperation {
+export interface StockOperationDto {
     operationNumber: number;
     dateOperation:   Date;
     amount:          number;

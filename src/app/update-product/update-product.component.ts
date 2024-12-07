@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
 import { ProductService } from '../product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../product';
+import { IProduct } from '../Iproduct';
 
 @Component({
   selector: 'app-update-product',
@@ -12,18 +13,18 @@ export class UpdateProductComponent implements OnInit{
 
   title: "mise à jour";
   pdtId:number;
-  product:any;
+  product:Product = new Product();
 
-  constructor(private productService:ProductService, private route:ActivatedRoute){}
+  constructor(private productService:ProductService, private router:Router,private route:ActivatedRoute){}
 
   ngOnInit(): void {
     this.getProductById();
   }
 
   onSubmit() {
-    this.productService.updateProduct(this.pdtId,this.product).subscribe(data => {
-    this.product = data;  
-    this.route.component
+       this.productService.updateProduct(this.pdtId,this.product).subscribe(data => {
+        this.product = data;
+        this.router.navigate(['products']);
     });
   }
 

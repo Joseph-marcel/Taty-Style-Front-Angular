@@ -1,6 +1,6 @@
-export class Margin {
+export interface Margin {
     marginId: number;
-    amount: number;
+    amount:   number;
     saleDate: Date;
     quantity: number;
 }

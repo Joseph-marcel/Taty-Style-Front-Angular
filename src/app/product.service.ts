@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from './product';
 import { ProductI } from './productI';
 import { ProductPage } from './productPage';
+import { IProduct } from './Iproduct';
+import { Product } from './product';
 
 @Injectable({
   providedIn: 'root'
