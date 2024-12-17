@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product';
+import { ProductI } from '../productI';
 
 
 
@@ -28,13 +29,17 @@ export class UpdateProductComponent implements OnInit{
         this.product = data;
         this.router.navigate(['products']);
     });
-  }
+  } 
 
   getProductById(){
     this.pdtId = this.route.snapshot.params['pdtId'];
     this.productService.getProduct(this.pdtId).subscribe(data => {
     this.product = data;
     });
+  }
+
+  goBack() {
+    this.router.navigate(['/products']);;
   }
 
 }

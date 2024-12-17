@@ -1,5 +1,8 @@
+
 export class Product {
-    designation:  string;
-    inStockPrice: number;
-    recordDate:   string;
+    pdtId:              number;
+    designation:        string;
+    inStockPrice:       number;
+    outStockPrice:      number;
+    recordDate:         Date;
 }

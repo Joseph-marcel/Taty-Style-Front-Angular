@@ -14,16 +14,21 @@
                           <small id="inStockPriceHelp" class="form-text text-muted text-center">prix d'achat</small>
                           <small><span class="text-danger"></span></small>				                                                                                                    	                                                                     	                                                                
                     </div>
-                    <div class="form-input-margin-right mr-3">
-                        <input type="date" class="form-control" id="recordDate" [(ngModel)]="product.recordDate"  name="recordDate"/>							                                      
-                            <small id="recordDateHelp" class="form-text text-muted text-center">date de creation</small>							                                          
-                            <small><span class="text-danger" ></span></small>                                                                                                                                 
+                    <div class="form-input-margin-right mr-2">
+                        <input type="date" class="form-control" id="recordDate" [(ngModel)]="product.recordDate"  name="recordDate"/>
+                          <small id="inStockPriceHelp" class="form-text text-muted text-center">date achat</small>
+                          <small><span class="text-danger"></span></small>				                                                                                                    	                                                                     	                                                                
                     </div>
                     <button type="submit" class="btn btn-success rounded">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
                       </svg>
                     </button>
+                    <a class="btn btn-secondary ml-2" (click)="goBack()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16">
+                            <path d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0"/>
+                        </svg>
+                  </a>
               </div>
             </form>
          </div>

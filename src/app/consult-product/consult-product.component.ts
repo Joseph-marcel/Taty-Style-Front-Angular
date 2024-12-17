@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductI } from '../productI';
 
 
@@ -18,7 +18,7 @@ export class ConsultProductComponent implements OnInit{
 
 
 
-  constructor(private productService:ProductService, private route:ActivatedRoute){}
+  constructor(private productService:ProductService, private route:ActivatedRoute,private router:Router){}
 
   ngOnInit(): void {
     this.productHistory();
@@ -33,6 +33,11 @@ export class ConsultProductComponent implements OnInit{
   getPage(page: number) {
     this.currentPage=page;
     this.productHistory();
+  }
+
+
+  goBack() {
+    this.router.navigate(['/products']);
   }
   
 }

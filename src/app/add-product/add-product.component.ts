@@ -4,6 +4,7 @@ import { Route, Router } from '@angular/router';
 import { Product } from '../product';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { ProductI } from '../productI';
 
 
 
@@ -21,13 +22,15 @@ export class AddProductComponent implements OnInit{
 
 constructor(private productService:ProductService,private router:Router){}
    
-ngOnInit(): void {
-    
-}
+ngOnInit(): void {}
 
 onSubmit() {
   this.productService.saveProduct(this.product).subscribe( data => { this.product = data});
   this.router.navigate(['products']);
+}
+
+goBack() {
+  this.router.navigate(['/products']);;
 }
 
   

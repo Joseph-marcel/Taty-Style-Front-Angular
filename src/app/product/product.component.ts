@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit{
   title = "Ajouter";
   productPage$:ProductPage;
   currentPage:number = 0;
-  size:number = 3;
+  size:number = 4;
   
 
   constructor(private productService: ProductService,
