@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { StockComponent } from './stock/stock.component';
 import { InvoiceComponent } from './invoice/invoice.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { provideHttpClient } from '@angular/common/http';
 import { ProductService } from './product.service';
@@ -57,6 +57,7 @@ const appRoutes : Routes = [
     NgxPaginationModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers:[

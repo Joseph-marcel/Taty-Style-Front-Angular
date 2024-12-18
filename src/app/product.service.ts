@@ -34,4 +34,8 @@ export class ProductService {
   updateProduct(pdtId:number,product:Product): Observable<any>{
     return this.httpClient.put(`${this.baseURL}/${pdtId}`,product);
   }
+
+  searchProduct(designation:string,page:number,size:number):Observable<ProductPage>{
+    return  this.httpClient.get<ProductPage>(`${this.baseURL}/search?designation=${designation}&page=${page}&size=${size}`);
+  }
 }
