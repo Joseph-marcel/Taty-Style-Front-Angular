@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class StockComponent implements OnInit{
 
+
   title="creer";
   reference:string;
   pdtId:number;
@@ -46,6 +47,10 @@ export class StockComponent implements OnInit{
 
   getStockHistory(reference:string) {
     this.router.navigate(['get-stock-history', reference]);
+  }
+
+  createStock() {
+    this.router.navigate(['create-stock']);
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StockService } from '../stock.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { OperationType } from '../operation-type';
 
 
 @Component({
@@ -10,10 +12,15 @@ import { StockService } from '../stock.service';
 })
 export class CreditStockComponent implements OnInit{
 
+
   reference:string;
   pdtId:number;
+  title:string ="continuer";
+  
 
-  constructor(private router:Router,private stockService:StockService,private route:ActivatedRoute){}
+  constructor(private router:Router,
+              private stockService:StockService,
+              private route:ActivatedRoute){}
 
   ngOnInit(): void {
      this.getStockReference();

@@ -26,12 +26,9 @@ export class StockService {
     return this.httpClient.get<StockPage>(`${this.baseUrl}?page=${page}&size=${size}`);
   }
 
-  createStock(stock:StockDto):Observable<any>{
+  create(title:string,dateExistant:Date){
+    let stock={title : title,dateExistant : dateExistant}
     return this.httpClient.post(`${this.baseUrl}`,stock);
-  }
-
-  saveOperation(reference:string,pdtId:number,stockOperation:StockOperation):void{
-      this.httpClient.post(`${this.baseUrl}/operation/${reference}/${pdtId}`,stockOperation);
   }
 
   getStockHistory(reference:string,currentPage:number,pageSize:number):Observable<StockI>{
@@ -46,8 +43,8 @@ export class StockService {
     return this.httpClient.get<Product>(`${this.baseUrl1}/${pdtId}`);
   }
 
-  creditStockOperation(reference:string,pdtId:number,stockOperation:StockOperation):void{
-    this.httpClient.post(`${this.baseUrl}/operation/${reference}/${pdtId}`,stockOperation);
+  saveStockOperation(reference:string,pdtId:number,stockOperation:StockOperation){
+    return this.httpClient.post(`${this.baseUrl}/operation/${reference}/${pdtId}`,stockOperation);
   }
 
 }

@@ -27,20 +27,16 @@
                     <td class="d-flex">
                         <div class="custom-cell1">
                             <a class="btn btn-info" (click)="creditStock(stock.reference)" data-bs-toggle="tooltip" data-bs-placement="top" title="CREDITER LE STOCK">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                     <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                </svg>
+                                <i class="bi bi-cash"></i>
                             </a>
                       </div>
                       <div class="custom-cell1">
                         <a class="btn btn-info" (click)="debitStock(stock.reference)" data-bs-toggle="tooltip" data-bs-placement="top" title="DEBITER LE STOCK">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                            </svg>
+                            <i class="bi bi-currency-dollar"></i>
                         </a>
                   </div>
                       <div class="custom-cell1">
-                        <a class="btn btn-info" (click)="getStockHistory(stock.reference)">
+                        <a class="btn btn-info" (click)="getStockHistory(stock.reference)" data-bs-toggle="tooltip" data-bs-placement="top" title="CONSULTER LE STOCK">
                             <svg width="20px" height="20px" viewBox="0 0 1.6 1.6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet"><path d="M0.05 0.786C0.05 1.006 0.144 1.325 0.425 1.325s0.375 -0.319 0.375 -0.539C0.8 0.105 0.05 0.105 0.05 0.786m0.319 0.5c-0.24 0 -0.299 -0.295 -0.299 -0.484 0 -0.651 0.598 -0.651 0.598 0 0 0.189 -0.059 0.484 -0.299 0.484" fill="#000000"/>
                                 <path d="M0.8 0.786C0.8 1.006 0.893 1.325 1.175 1.325 1.457 1.325 1.55 1.006 1.55 0.786c0 -0.681 -0.75 -0.681 -0.75 0m0.319 0.5c-0.24 0 -0.299 -0.295 -0.299 -0.484 0 -0.651 0.598 -0.651 0.598 0 0 0.189 -0.06 0.484 -0.299 0.484" fill="#000000"/>
                                 <path d="M0.07 0.806c0 0.155 0.109 0.274 0.243 0.274 0.134 0 0.243 -0.119 0.243 -0.274 0 -0.382 -0.486 -0.382 -0.486 0" fill="#000000"/>
@@ -69,7 +65,7 @@
     <fieldset class="form-group customborder p-3 mt-3 ml-4 w-25">
         <legend>{{title}}</legend>
         <div class="text-center mt-4">
-            <a  class="btn btn-success">
+            <a  class="btn btn-success" (click) = "createStock()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
                 </svg>

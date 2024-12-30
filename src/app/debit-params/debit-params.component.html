@@ -1,8 +1,8 @@
 <div>
     <fieldset class="form-group customborder p-3 mt-3 mb-1">
-        <legend>crediter</legend>
+        <legend>debiter</legend>
            <div class="col-md-10 offset-1">
-            <form (ngSubmit) = "onSubmit()" method="post">
+            <form (ngSubmit) = "onSubmitDebit()" method="post">
                 <div class="d-flex flex-row justify-content-center mb-3">
                     <div class="form-input-margin-right mr-2">
                         <input type="text" class="form-control" id="type" name="type" [(ngModel)] = "stockOperation.type"  disabled="true"/>	                       					                                        
@@ -29,4 +29,5 @@
          </div>
     </fieldset>
 </div>
+
 

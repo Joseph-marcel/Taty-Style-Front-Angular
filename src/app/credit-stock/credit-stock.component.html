@@ -1,18 +1,22 @@
-<div class="d-flex flex-row  mb-3">
-    <div class="col-md-6 mr-2 mt-3">
-        <input type="text" class="form-control" id="reference" name="reference"  value="{{reference}}"   [disabled]="true"/>	 					                                        
-            <small id="reference" class="form-text text-muted text-center">stock</small>						                                                                                                          
-    </div>
-    <div class="col-md-1 mr-2  mt-3">
-        <input type="number" class="form-control w-75" id="pdtId" name="pdtId"  value="{{pdtId}}"  [disabled]="true"/>
-          <small id="amountHelp" class="form-text text-muted text-center">produit</small>			                                                                                                    	                                                                     	                                                                
-    </div>
-    <div class="col-md-3 mr-3 mt-3">
-        <a class="btn btn-success" (click)="creditParams(reference,pdtId)" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
-                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
-                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-              </svg>
-        </a>                                                                                                                              
-    </div>
+<div class="container">
+    <fieldset class="form-group customborder p-3 mt-1 w-100">
+        <legend>{{title}}</legend>
+        <div class="text-center mt-2">
+            <div class="row">
+                <div class="col-md-5">
+                  <input type="text" class="form-control text-center" value="{{reference}}" readonly="true">
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control text-center" value="{{pdtId}}" readonly="true">
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-info text-center" (click)="creditParams(reference,pdtId)">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                    </a>
+                </div>
+              </div>
+        </div>
+    </fieldset>
 </div>
+
+

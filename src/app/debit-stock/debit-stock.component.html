@@ -1,1 +1,20 @@
-<p>debit-stock works!</p>
+<div class="container">
+    <fieldset class="form-group customborder p-3 mt-1 w-100">
+        <legend>{{title}}</legend>
+        <div class="text-center mt-2">
+            <div class="row">
+                <div class="col-md-5">
+                  <input type="text" class="form-control text-center" value="{{reference}}" readonly="true">
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control text-center" value="{{pdtId}}" readonly="true">
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-info text-center" (click)="debitParams(reference,pdtId)">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                    </a>
+                </div>
+              </div>
+        </div>
+    </fieldset>
+</div>
