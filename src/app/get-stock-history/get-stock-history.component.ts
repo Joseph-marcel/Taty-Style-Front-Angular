@@ -5,6 +5,7 @@ import { StockI } from '../stockI';
 
 @Component({
   selector: 'app-get-stock-history',
+  standalone:false,
   templateUrl: './get-stock-history.component.html',
   styleUrl: './get-stock-history.component.css'
 })

@@ -6,6 +6,7 @@ import { OperationType } from '../operation-type';
 
 @Component({
   selector: 'app-credit-params',
+  standalone:false,
   templateUrl: './credit-params.component.html',
   styleUrl: './credit-params.component.css'
 })

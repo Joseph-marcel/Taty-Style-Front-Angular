@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-stock',
+  standalone:false,
   templateUrl: './create-stock.component.html',
   styleUrl: './create-stock.component.css'
 })

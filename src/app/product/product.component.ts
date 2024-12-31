@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
+  standalone:false,
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })

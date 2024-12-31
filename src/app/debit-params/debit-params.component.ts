@@ -6,6 +6,7 @@ import { StockOperation } from '../stock-operation';
 
 @Component({
   selector: 'app-debit-params',
+  standalone:false,
   templateUrl: './debit-params.component.html',
   styleUrl: './debit-params.component.css'
 })

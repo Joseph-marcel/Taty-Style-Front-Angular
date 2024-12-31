@@ -12,6 +12,7 @@ import { ProductI } from '../productI';
 
 @Component({
   selector: 'app-add-product',
+  standalone:false,
   templateUrl: './add-product.component.html',
   styleUrl: './add-product.component.css'
 })

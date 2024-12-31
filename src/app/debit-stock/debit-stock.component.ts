@@ -4,6 +4,7 @@ import { StockService } from '../stock.service';
 
 @Component({
   selector: 'app-debit-stock',
+  standalone:false,
   templateUrl: './debit-stock.component.html',
   styleUrl: './debit-stock.component.css'
 })

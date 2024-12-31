@@ -6,6 +6,7 @@ import { ProductI } from '../productI';
 
 @Component({
   selector: 'app-consult-product',
+  standalone:false,
   templateUrl: './consult-product.component.html',
   styleUrl: './consult-product.component.css'
 })

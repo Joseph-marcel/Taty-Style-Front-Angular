@@ -8,6 +8,7 @@ import { ProductI } from '../productI';
 
 @Component({
   selector: 'app-update-product',
+  standalone:false,
   templateUrl: './update-product.component.html',
   styleUrl: './update-product.component.css'
 })
