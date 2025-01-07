@@ -21,6 +21,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { DatePipe } from '@angular/common';
 import { CreateStockComponent } from './create-stock/create-stock.component';
 import { DebitParamsComponent } from './debit-params/debit-params.component';
+import { InvoiceService } from './invoice.service';
+import { EditInvoiceComponent } from './edit-invoice/edit-invoice.component';
+import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 
 
 
@@ -29,13 +32,17 @@ const appRoutes : Routes = [
   {path:'products', component:ProductComponent},
   {path :'stock', component: StockComponent},
   {path :'invoice', component: InvoiceComponent},
-  {path :'update-product/:pdtId', component: UpdateProductComponent},
+  {path :'add-invoice', component: AddInvoiceComponent},
   {path :'add-product', component: AddProductComponent},
   {path :'create-stock', component: CreateStockComponent},
+
+  {path :'update-product/:pdtId', component: UpdateProductComponent},
   {path :'consult-product/:pdtId', component: ConsultProductComponent},
   {path :'credit-stock/:reference', component: CreditStockComponent},
+  {path :'edit-invoice/:billId', component: EditInvoiceComponent},
   {path :'debit-stock/:reference', component: DebitStockComponent},
   {path :'get-stock-history/:reference', component: GetStockHistoryComponent},
+
   {path :'credit-params/:reference/:pdtId', component: CreditParamsComponent},
   {path :'debit-params/:reference/:pdtId', component: DebitParamsComponent},
   {path :'products', redirectTo:'/products', pathMatch:'full'}
@@ -56,7 +63,9 @@ const appRoutes : Routes = [
     GetStockHistoryComponent,
     CreditParamsComponent,
     CreateStockComponent,
-    DebitParamsComponent
+    DebitParamsComponent,
+    EditInvoiceComponent,
+    AddInvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +78,7 @@ const appRoutes : Routes = [
   providers:[
     provideHttpClient(),
     ProductService,
+    InvoiceService,
     DatePipe
   ],
   bootstrap: [AppComponent]
