@@ -18,7 +18,7 @@ import { DebitStockComponent } from './debit-stock/debit-stock.component';
 import { GetStockHistoryComponent } from './get-stock-history/get-stock-history.component';
 import { CreditParamsComponent } from './credit-params/credit-params.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { CreateStockComponent } from './create-stock/create-stock.component';
 import { DebitParamsComponent } from './debit-params/debit-params.component';
 import { InvoiceService } from './invoice.service';
@@ -73,6 +73,7 @@ const appRoutes : Routes = [
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers:[
